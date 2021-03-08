@@ -1,13 +1,14 @@
 {
   "dependencies": {
-    "com.unity.package-manager-ui": {
-      "version": "2.2.0",
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.5",
       "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "2.0.1",
+      "version": "3.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
