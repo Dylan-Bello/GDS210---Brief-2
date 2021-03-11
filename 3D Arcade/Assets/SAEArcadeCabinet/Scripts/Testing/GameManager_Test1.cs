@@ -26,7 +26,7 @@ namespace SAE
         {
             // Poll SAE.ArcadeMachine for players' joystick axis and use to set Rigidbody velocity.
             Vector2 axisValues = SAE.ArcadeMachine.PlayerJoystickAxisStatic( ArcadeMachine.PlayerColorId.YELLOW_PLAYER );
-            this.yellowPlayer.velocity = new Vector3( axisValues.x, 0f, -axisValues.y ) * this.moveSpeed;
+            this.yellowPlayer.velocity = new Vector3( axisValues.x, 0f, axisValues.y ) * this.moveSpeed;
 
             axisValues = SAE.ArcadeMachine.PlayerJoystickAxisStatic( ArcadeMachine.PlayerColorId.BLUE_PLAYER );
             this.bluePlayer.velocity = new Vector3( axisValues.x, 0f, -axisValues.y ) * this.moveSpeed;
