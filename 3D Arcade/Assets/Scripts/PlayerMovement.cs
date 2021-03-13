@@ -21,9 +21,6 @@ namespace SAE
         public Transform cameraParent;
         public CinemachineDollyCart dolly;
 
-        private int leanLimit;
-        private float lerpTime;
-        private object targetEulerAngels;
         public ParticleSystem flame;
 
 
@@ -32,6 +29,7 @@ namespace SAE
         {
             playerModel = transform.GetChild(0);
 
+            SetSpeed(forwardSpeed);
             flame.Play();
         }
 
@@ -39,20 +37,20 @@ namespace SAE
         void Update()
         {
             Vector2 axisValues = ArcadeMachine.PlayerJoystickAxisStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
-            float horizontal = axisValues.x;
-            float vertical = axisValues.y;
+            float h = axisValues.x;
+            float v = axisValues.y;
 
 
 
-            LocalMove(horizontal, vertical, moveSpeed);
-            RotationLook(horizontal, vertical, lookSpeed);
-            HorizontalLean(playerModel, horizontal, 80, .1f);
+            LocalMove(h, v, moveSpeed);
+            RotationLook(h, v, lookSpeed);
+            HorizontalLean(playerModel, h, 50, .1f);
 
         }
 
         void LocalMove(float x, float y, float speed)
         {
-            transform.localPosition += new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
+            transform.localPosition += new Vector3(x, y, 0) * speed * Time.deltaTime;
             ClampPosition();
         }
 
@@ -64,17 +62,18 @@ namespace SAE
             transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
 
-        void RotationLook(float horizontal, float vertical, float speed)
+        void RotationLook(float h, float v, float speed)
         {
-            aimTarget.parent.position = Vector3.zero;
-            aimTarget.localPosition = new Vector3(horizontal, vertical, 1);
+            aimTarget.parent.position = Vector2.zero;
+            aimTarget.transform.position = new Vector3(h, v, 1);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(aimTarget.position), Mathf.Deg2Rad * speed);
         }
 
-        void HorizontalLean(Transform target, float axis, float leanLimt, float lerpTime)
+        void HorizontalLean(Transform target, float axis, float leanLimit, float lerpTime)
         {
-            Vector3 targetEulerAngles = target.localEulerAngles;
-            target.localEulerAngles = new Vector3(targetEulerAngles.x, targetEulerAngles.y, Mathf.LerpAngle(targetEulerAngles.z, -axis * leanLimit, lerpTime));
+            Vector3 targetEulerAngels = target.localEulerAngles;
+            target.localEulerAngles = new Vector3(targetEulerAngels.x, targetEulerAngels.y, Mathf.LerpAngle(targetEulerAngels.z, -axis * leanLimit, lerpTime));
+            
         }
 
         private void OnDrawGizmos()
@@ -82,6 +81,11 @@ namespace SAE
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(aimTarget.position, .5f);
             Gizmos.DrawSphere(aimTarget.position, .15f);
+        }
+
+        void SetSpeed(float x)
+        {
+            dolly.m_Speed = x;
         }
 
     }    
