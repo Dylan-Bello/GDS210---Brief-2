@@ -14,7 +14,7 @@ namespace SAE
         public bool Joystick = true;
 
         public float moveSpeed = 18;
-        public float lookSpeed = 340;
+        public float lookSpeed = 100;
         public float forwardSpeed = 6;
 
         public Transform aimTarget;
@@ -23,11 +23,20 @@ namespace SAE
 
         public ParticleSystem flame;
 
+        public GameObject bulletPrefab;
+        public Transform firePoint;
+
+        public float bulletForce = 10f;
+        public float fireRate = 0.5F;
+        private float nextFire = 0.0F;
+
+        [HideInInspector]
+        public bool canShoot = true;
 
         // Start is called before the first frame update
         void Start()
         {
-            playerModel = transform.GetChild(0);
+           playerModel = gameObject.transform;
 
             SetSpeed(forwardSpeed);
             flame.Play();
@@ -40,11 +49,16 @@ namespace SAE
             float h = axisValues.x;
             float v = axisValues.y;
 
-
+            //Shoot Function
+            if (Input.GetMouseButton(0) && (Time.time > nextFire) && canShoot)
+            {
+                nextFire = Time.time + fireRate;
+                Shoot();
+            }
 
             LocalMove(h, v, moveSpeed);
             RotationLook(h, v, lookSpeed);
-            HorizontalLean(playerModel, h, 50, .1f);
+            HorizontalLean(playerModel, h, 70, .1f);
 
         }
 
@@ -86,6 +100,13 @@ namespace SAE
         void SetSpeed(float x)
         {
             dolly.m_Speed = x;
+        }
+
+        void Shoot()
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            //SoundManager.instance.PlayShootFX(shootClip);
+
         }
 
     }    

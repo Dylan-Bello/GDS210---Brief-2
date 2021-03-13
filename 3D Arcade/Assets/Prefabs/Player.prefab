@@ -378,13 +378,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474867684585133266}
-  m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.021, z: 0.19}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalRotation: {x: 5.3290705e-14, y: 0.70710707, z: 3.5527137e-15, w: 0.7071065}
+  m_LocalPosition: {x: 0, y: 0, z: 1.789}
+  m_LocalScale: {x: 2, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 80406020856011521}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &474867684585133294
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474867684585133266}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: f0cf663b01babad4c858018100772e58, type: 3}
 --- !u!23 &474867684585133295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -445,8 +445,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.05992071, y: 0.06267946, z: 0.06318247}
+  m_Center: {x: -0.024557007, y: -0.0014671993, z: -0.00009654645}
 --- !u!1 &474867684702350626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10083,7 +10083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474867685875618236}
   m_LocalRotation: {x: -0.0010235443, y: 0.0014777184, z: 0.0000015128753, w: 0.9999984}
-  m_LocalPosition: {x: -0.89, y: 3.69, z: -6.66}
+  m_LocalPosition: {x: 0, y: 0, z: -6.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 474867684283904987}
@@ -10153,8 +10153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 80406020856011521}
-  offset: {x: 0, y: 0, z: 0}
-  limits: {x: 10, y: 10}
+  offset: {x: 0.25, y: 1, z: 0}
+  limits: {x: 10, y: 5}
   smoothTime: 0.5
 --- !u!114 &474867685875618235
 MonoBehaviour:
@@ -10190,6 +10190,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &5095101318209090457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744915232490291643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08003478, y: 0.03247955, z: 0.13384628}
+  m_Center: {x: -0.000980382, y: 0.0029255152, z: -0.001262741}
 --- !u!114 &8761036068519461219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10204,12 +10217,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick: 1
   moveSpeed: 18
-  lookSpeed: 340
+  lookSpeed: 100
   forwardSpeed: 6
   aimTarget: {fileID: 474867684444444832}
   cameraParent: {fileID: 474867685875618233}
   dolly: {fileID: 0}
   flame: {fileID: 474867685440441770}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletForce: 10
+  fireRate: 0.5
+  canShoot: 1
+--- !u!1 &8035012759433273994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2702683734536183443}
+  m_Layer: 0
+  m_Name: Fire Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2702683734536183443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035012759433273994}
+  m_LocalRotation: {x: 0.70710677, y: -0.000000001862645, z: 0.0000000018626454, w: 0.7071069}
+  m_LocalPosition: {x: 0.0012000003, y: -0.004799987, z: 0.08020001}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children: []
+  m_Father: {fileID: 80406020856011521}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &474867685680856298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10240,17 +10288,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2401480ad409b104db358db28730f73b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2401480ad409b104db358db28730f73b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2401480ad409b104db358db28730f73b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2401480ad409b104db358db28730f73b,
         type: 3}
