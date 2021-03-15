@@ -13,9 +13,9 @@ namespace SAE
 
         public bool Joystick = true;
 
-        public float moveSpeed = 18;
-        public float lookSpeed = 100;
-        public float forwardSpeed = 6;
+        public float moveSpeed = 18f;
+        public float lookSpeed = 30f;
+        public float forwardSpeed = 6f;
 
         public Transform aimTarget;
         public Transform cameraParent;
@@ -38,7 +38,7 @@ namespace SAE
         {
            playerModel = gameObject.transform;
 
-            SetSpeed(forwardSpeed);
+            //SetSpeed(forwardSpeed);
             flame.Play();
         }
 

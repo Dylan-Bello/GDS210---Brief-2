@@ -72,7 +72,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1394ab2c17e804db11435b37ced367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 5
+  bulletSpeed: 20
 --- !u!54 &1318008141686196175
 Rigidbody:
   m_ObjectHideFlags: 0

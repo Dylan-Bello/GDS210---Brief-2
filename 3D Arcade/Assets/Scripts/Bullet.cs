@@ -33,13 +33,13 @@ public class Bullet : MonoBehaviour
     }
 
 
-   /* void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyFollow>().TakeDamage(damageToTake);
+            //other.gameObject.GetComponent<EnemyFollow>().TakeDamage(damageToTake);
 
-            anim.SetBool("Hit", true);
+            //anim.SetBool("Hit", true);
 
             Destroy(this.gameObject, 3f);
 
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         anim.SetBool("Hit", true);
 
