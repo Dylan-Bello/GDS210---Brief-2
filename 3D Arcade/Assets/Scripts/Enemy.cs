@@ -17,11 +17,13 @@ public class Enemy : MonoBehaviour
     public GameObject[] players;
     public GameObject lastHitPlayer;
 
+    public GameManager gameManager;
     
     void Start()
     {
         currentHealth = maxHealth;
         //healthBar.SetMaxHealth(maxHealth);
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
       //  player = GameObject.FindGameObjectWithTag("Player");//GetComponent<SAE.PlayerMovement>();
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -36,24 +38,25 @@ public class Enemy : MonoBehaviour
         {
 
             //SoundManager.instance.PlaySoundFX(deathClip);
-           // player.GetComponent<SAE.PlayerMovement>().GainXP(xpValue);
-           /*foreach(GameObject player in players)
-            {
+            // player.GetComponent<SAE.PlayerMovement>().GainXP(xpValue);
+            /*foreach(GameObject player in players)
+             {
 
-                Debug.Log("Do A Flip");
-              
-                if (player == lastHitPlayer)
-                {
-                    player.GetComponent<SAE.PlayerMovement>().GainXP(xpValue);
-                    Debug.Log("Working");
-                }
-                 else
-                {
-                    Debug.Log("Invalid Gameobject");
-                }
-            }*/
+                 Debug.Log("Do A Flip");
 
+                 if (player == lastHitPlayer)
+                 {
+                     player.GetComponent<SAE.PlayerMovement>().GainXP(xpValue);
+                     Debug.Log("Working");
+                 }
+                  else
+                 {
+                     Debug.Log("Invalid Gameobject");
+                 }
+             }*/
+            gameManager.UpdateScore(5);
             Destroy(this.gameObject);
+
         }
     }
 
@@ -68,7 +71,8 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= damageToTake;
         //healthBar.SetHealth(currentHealth);
-       
+
+        
     }
 
 }

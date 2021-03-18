@@ -14,7 +14,7 @@ namespace SAE
         public int xp = 0;
         public int level = 1;
         public int xpForNextLevel = 10;
-        private PlayerHealth health;
+        //private PlayerHealth health;
 
         public bool Joystick = true;
 
@@ -23,13 +23,15 @@ namespace SAE
         public float forwardSpeed = 6f;
 
         public Transform aimTarget;
-        public Transform cameraParent;
+        //public Transform cameraParent;
+        public Camera mainCamera;
         public CinemachineDollyCart dolly;
 
         public ParticleSystem flame;
 
         public GameObject bulletPrefab;
         public Transform firePoint;
+        public RectTransform crosshairTexture;
 
         public float fireRate = 0.5F;
         private float nextFire = 0.0F;
@@ -41,7 +43,7 @@ namespace SAE
         void Start()
         {
             playerModel = gameObject.transform;
-            health = this.GetComponent<PlayerHealth>();
+            //health = this.GetComponent<PlayerHealth>();
             SetXpForNextLevel();
 
             //SetSpeed(forwardSpeed);
@@ -70,13 +72,18 @@ namespace SAE
 
             LocalMove(h, v, moveSpeed);
             RotationLook(h, v, lookSpeed);
-            HorizontalLean(playerModel, h, 70, .1f);
+            HorizontalLean(playerModel, h, 45, .1f);
+
+            if (crosshairTexture)
+            {
+                crosshairTexture.position = mainCamera.WorldToScreenPoint(transform.position + transform.forward * 100);
+            }
 
         }
 
         void LocalMove(float x, float y, float speed)
         {
-            transform.localPosition += new Vector3(x, y, 0) * speed * Time.deltaTime;
+            transform.localPosition += new Vector3(x, -y, 0) * speed * Time.deltaTime;
             ClampPosition();
         }
 
@@ -91,7 +98,7 @@ namespace SAE
         void RotationLook(float h, float v, float speed)
         {
             aimTarget.parent.position = Vector2.zero;
-            aimTarget.transform.position = new Vector3(h, v, 1);
+            aimTarget.transform.position = new Vector3(h, -v, 1.8f);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(aimTarget.position), Mathf.Deg2Rad * speed);
         }
 
