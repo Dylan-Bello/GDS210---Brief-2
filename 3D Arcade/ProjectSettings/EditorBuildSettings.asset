@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 85adc9a92720149459898832e3e37fa9
+  - enabled: 1
     path: Assets/Scenes/Dylan's Scene 1.unity
     guid: a16ab8be4b241c54dab122a5ae0342c0
-  - enabled: 1
-    path: Assets/SAEArcadeCabinet/Scenes/SAEArcadeCabinetInputTest.unity
-    guid: 671be74c7f567644f9dd28e323a7731f
   m_configObjects: {}
