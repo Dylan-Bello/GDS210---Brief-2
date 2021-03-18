@@ -8,6 +8,12 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 10;
     public float spinSpeed = 100f;
     public int xpValue = 1;
+    private GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
 
     void Update()
     {
@@ -20,6 +26,7 @@ public class Enemy : MonoBehaviour
         //anim.SetBool("Hit", true);
 
         Destroy(this.gameObject);
+        gameManager.UpdateScore(5);
     }
 
 }
