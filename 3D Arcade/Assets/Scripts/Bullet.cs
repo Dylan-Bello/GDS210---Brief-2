@@ -5,15 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-
-
-    public float bulletSpeed = 1f;
+    public float bulletSpeed;
     public int damageToTake;
+    public GameObject shooter;
 
     //public Animator anim;
 
     void Awake()
     {
+
+        
         //anim = GetComponent<Animator>();
 
         //anim.SetBool("Hit", false);
@@ -29,31 +30,28 @@ public class Bullet : MonoBehaviour
         pos += transform.rotation * velocity;
         transform.position = pos;
 
-
+        Debug.Log("Bullet Spawned");
     }
 
 
-    /*void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            //other.gameObject.GetComponent<EnemyFollow>().TakeDamage(damageToTake);
+            //other.gameObject.GetComponent<Enemy>().lastHitPlayer = shooter;
+            //other.gameObject.GetComponent<Enemy>().TakeDamage(damageToTake);
+           // other.gameObject.GetComponent<Enemy>().lastHitPlayer = shooter;
 
             //anim.SetBool("Hit", true);
 
-            Destroy(this.gameObject, 3f);
+            Destroy(this.gameObject);
 
 
         }
 
-    }*/
-
-    public void Destroy()
-    {
-        //anim.SetBool("Hit", true);
-
-        Destroy(this.gameObject);
     }
+
+    
 
 
 }

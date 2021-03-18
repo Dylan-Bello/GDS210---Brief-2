@@ -3253,6 +3253,7 @@ GameObject:
   - component: {fileID: 4814073931055265558}
   - component: {fileID: 4814073931055265556}
   - component: {fileID: 4214409702399918188}
+  - component: {fileID: 8328154075083719926}
   m_Layer: 0
   m_Name: Lowpoly-Donut-Pink
   m_TagString: Untagged
@@ -3389,11 +3390,38 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4814073931055265554}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0014162617, y: 0.0014160177, z: 0.00046999106}
   m_Center: {x: -0.000007808325, y: 0.000006260991, z: 0.000013299053}
+--- !u!114 &8328154075083719926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4814073931055265554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f281ae06ed69444915ed833e0c417e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 378007865115319515}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4814073931098905114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,7 +3596,7 @@ GameObject:
   - component: {fileID: 378007865115319515}
   m_Layer: 0
   m_Name: Pink Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3600,6 +3628,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b991ec29e4fd7dd41b8408b83e9f0925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  maxHealth: 100
+  currentHealth: 0
+  moveSpeed: 20
   spinSpeed: 0
   xpValue: 1
+  players: []
+  lastHitPlayer: {fileID: 0}

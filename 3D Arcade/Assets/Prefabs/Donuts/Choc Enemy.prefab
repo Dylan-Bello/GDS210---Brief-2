@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2846343347180645769}
   m_Layer: 0
   m_Name: Choc Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b991ec29e4fd7dd41b8408b83e9f0925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  maxHealth: 100
+  currentHealth: 0
+  moveSpeed: 20
   spinSpeed: 0
-  xpValue: 1
+  xpValue: 5
+  players: []
+  lastHitPlayer: {fileID: 0}
 --- !u!1 &5460708766886619072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,7 +3304,7 @@ GameObject:
   - component: {fileID: 5460708768945082069}
   - component: {fileID: 5460708768945082071}
   - component: {fileID: 3985795331061573185}
-  - component: {fileID: 3719633300445343909}
+  - component: {fileID: 6773234702781204727}
   m_Layer: 0
   m_Name: Lowpoly-Donut-Choc
   m_TagString: Untagged
@@ -3437,12 +3441,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5460708768945082073}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0014162617, y: 0.0014160177, z: 0.00046999106}
   m_Center: {x: -0.000007808325, y: 0.000006260991, z: 0.000013299053}
---- !u!114 &3719633300445343909
+--- !u!114 &6773234702781204727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3457,15 +3461,14 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7641685155390979026, guid: bea4dafe446b00c4eb72fbfcb431fad1,
-          type: 3}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: Destroy
-        m_Mode: 1
+      - m_Target: {fileID: 2846343347180645769}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

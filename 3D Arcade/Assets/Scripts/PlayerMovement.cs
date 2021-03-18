@@ -10,6 +10,11 @@ namespace SAE
     public class PlayerMovement : MonoBehaviour
     {
         private Transform playerModel;
+        
+        public int xp = 0;
+        public int level = 1;
+        public int xpForNextLevel = 10;
+        private PlayerHealth health;
 
         public bool Joystick = true;
 
@@ -26,7 +31,6 @@ namespace SAE
         public GameObject bulletPrefab;
         public Transform firePoint;
 
-        public float bulletForce = 10f;
         public float fireRate = 0.5F;
         private float nextFire = 0.0F;
 
@@ -36,7 +40,9 @@ namespace SAE
         // Start is called before the first frame update
         void Start()
         {
-           playerModel = gameObject.transform;
+            playerModel = gameObject.transform;
+            health = this.GetComponent<PlayerHealth>();
+            SetXpForNextLevel();
 
             //SetSpeed(forwardSpeed);
             flame.Play();
@@ -50,10 +56,16 @@ namespace SAE
             float v = axisValues.y;
 
             //Shoot Function
-            if (Input.GetMouseButton(0) && (Time.time > nextFire) && canShoot)
+            if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 0) == true ) && (Time.time > nextFire) && canShoot)
             {
                 nextFire = Time.time + fireRate;
                 Shoot();
+            }
+
+            if (xp >= xpForNextLevel)
+            {
+                LevelUp();
+                //health.RegenHealthFull();
             }
 
             LocalMove(h, v, moveSpeed);
@@ -105,8 +117,31 @@ namespace SAE
         void Shoot()
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.GetComponent<Bullet>().shooter = this.gameObject;
             //SoundManager.instance.PlayShootFX(shootClip);
 
+        }
+
+        public void GainXP(int xpToGain)
+        {
+            xp += xpToGain;
+            Debug.Log("Gained " + xpToGain + " XP, Current Xp = " + xp + ", XP needed to reach next Level = " + xpForNextLevel);
+        }
+
+        void SetXpForNextLevel()
+        {
+            xpForNextLevel = (9 + (level * level * 1));
+            Debug.Log("xpForNextLevel " + xpForNextLevel);
+        }
+        void LevelUp()
+        {
+            xp = 0;
+            level++;
+
+            //ScoreManager.levelValue += level;
+
+            Debug.Log("level" + level);
+            SetXpForNextLevel();
         }
 
     }    
