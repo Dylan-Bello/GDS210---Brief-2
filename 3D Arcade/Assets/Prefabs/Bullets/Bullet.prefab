@@ -159,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 6666599302750092007}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.9513738, y: 5.59, z: 45.662}
-  m_LocalScale: {x: 0.5, y: 2.5, z: 0.5}
+  m_LocalScale: {x: 1.2398, y: 6.199, z: 1.2398}
   m_Children:
   - {fileID: 8534181738882739235}
   m_Father: {fileID: 0}
@@ -222,7 +222,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6666599302750092007}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1394ab2c17e804db11435b37ced367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 5
+  damageToTake: 0
 --- !u!54 &1318008141686196175
 Rigidbody:
   m_ObjectHideFlags: 0

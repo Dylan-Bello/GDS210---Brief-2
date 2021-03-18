@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
 
     public float bulletSpeed = 1f;
-    //public int damageToTake;
+    public int damageToTake;
 
     //public Animator anim;
 
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -46,14 +46,14 @@ public class Bullet : MonoBehaviour
 
         }
 
-    }
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        anim.SetBool("Hit", true);
-
-        Destroy(this.gameObject, 3f);
     }*/
+
+    public void Destroy()
+    {
+        //anim.SetBool("Hit", true);
+
+        Destroy(this.gameObject);
+    }
 
 
 }
