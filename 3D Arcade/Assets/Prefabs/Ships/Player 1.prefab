@@ -5227,7 +5227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8526346191345628169}
-  - component: {fileID: 3778010967203706830}
+  - component: {fileID: 7392367842110397501}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -5252,7 +5252,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3778010967203706830
+--- !u!114 &7392367842110397501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5264,14 +5264,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8333ccf82028a4f849241290210adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xp: 0
+  level: 1
+  xpForNextLevel: 10
   Joystick: 1
   moveSpeed: 18
-  lookSpeed: 340
+  lookSpeed: 30
   forwardSpeed: 6
-  aimTarget: {fileID: 8526346191170658162}
-  cameraParent: {fileID: 8526346191792330347}
+  aimTarget: {fileID: 0}
+  mainCamera: {fileID: 0}
   dolly: {fileID: 0}
-  flame: {fileID: 8526346192229599864}
+  flame: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  crosshairTexture: {fileID: 0}
+  fireRate: 0.5
+  canShoot: 1
 --- !u!1 &8526346191469686339
 GameObject:
   m_ObjectHideFlags: 0

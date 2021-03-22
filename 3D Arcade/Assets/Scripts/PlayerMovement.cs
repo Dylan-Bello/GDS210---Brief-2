@@ -34,7 +34,7 @@ namespace SAE
         public RectTransform crosshairTexture;
 
         public float fireRate = 0.5F;
-        private float nextFire = 0.0F;
+        public float nextFire = 0.0F;
 
         [HideInInspector]
         public bool canShoot = true;
@@ -51,9 +51,10 @@ namespace SAE
         }
 
         // Update is called once per frame
-        void Update()
+        public void AxisUpdate(Vector2 axis)
         {
-            Vector2 axisValues = ArcadeMachine.PlayerJoystickAxisStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
+            Vector2 axisValues = axis;//ArcadeMachine.PlayerJoystickAxisStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
+            print(axis);
             float h = axisValues.x;
             float v = axisValues.y;
 
@@ -63,6 +64,8 @@ namespace SAE
                 nextFire = Time.time + fireRate;
                 Shoot();
             }
+
+            
 
             if (xp >= xpForNextLevel)
             {
@@ -92,7 +95,7 @@ namespace SAE
             Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
             pos.x = Mathf.Clamp01(pos.x);
             pos.y = Mathf.Clamp01(pos.y);
-            transform.position = Camera.main.ViewportToWorldPoint(pos);
+            //transform.position = mainCamera.GetComponent<Camera>().ViewportToWorldPoint(pos);
         }
 
         void RotationLook(float h, float v, float speed)
