@@ -22,12 +22,20 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+
+       
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
+
 
 }
