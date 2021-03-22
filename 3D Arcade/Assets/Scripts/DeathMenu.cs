@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class DeathMenu : MonoBehaviour
 {
  
+    public void ReturnMenu()
+    {
+        if (Input.GetButton("Main Menu") == true)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
     void Update()
     {
         if (Input.GetButton("Restart") == true)
@@ -13,10 +21,7 @@ public class DeathMenu : MonoBehaviour
             SceneManager.LoadScene(1);
         }
        
-        if (Input.GetButton("Main Menu") == true)
-        {
-            SceneManager.LoadScene(0);
-        }
+        
     }
     
 }
