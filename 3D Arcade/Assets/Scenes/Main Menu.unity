@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 1459971268}
   - component: {fileID: 1459971267}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2583,7 +2583,7 @@ GameObject:
   - component: {fileID: 1856681691}
   - component: {fileID: 1856681690}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
