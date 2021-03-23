@@ -17,5 +17,11 @@ public class MainMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
     }
-   
+
+    public void PlayCoopGame()
+    {
+        Debug.Log("Play Co-op Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
 }
