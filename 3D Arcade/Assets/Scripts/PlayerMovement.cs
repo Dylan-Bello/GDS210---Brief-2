@@ -65,7 +65,13 @@ namespace SAE
                 Shoot();
             }
 
-            
+            if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.BLUE_PLAYER, 0) == true) && (Time.time > nextFire) && canShoot)
+            {
+                nextFire = Time.time + fireRate;
+                Shoot();
+            }
+
+
 
             if (xp >= xpForNextLevel)
             {

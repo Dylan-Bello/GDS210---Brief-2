@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572411062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 19.5, z: 198.2}
+  m_LocalPosition: {x: -0, y: 0, z: 198.2}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 474867685875618233}
@@ -51,7 +51,7 @@ MonoBehaviour:
   xRange: 10
   yRange: 10
   minSpawnTime: 1
-  maxSpawnTime: 5
+  maxSpawnTime: 2
 --- !u!1 &474867684283904984
 GameObject:
   m_ObjectHideFlags: 0
@@ -10189,6 +10189,7 @@ MonoBehaviour:
   firePoint: {fileID: 2702683734536183443}
   crosshairTexture: {fileID: 0}
   fireRate: 0.3
+  nextFire: 0
   canShoot: 1
 --- !u!1 &8035012759433273994
 GameObject:
