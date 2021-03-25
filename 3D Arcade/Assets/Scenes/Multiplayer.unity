@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: 0, y: 0, z: 0}
     roll: 0
-  - position: {x: 1, y: 0, z: 1000}
+  - position: {x: 1, y: 0, z: 3486.2122}
     roll: 0
 --- !u!4 &8690949
 Transform:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: 0, y: 0, z: 0}
     roll: 0
-  - position: {x: 1, y: 0, z: 1000}
+  - position: {x: 1, y: 0, z: 3576.264}
     roll: 0
 --- !u!4 &119103748
 Transform:
@@ -1016,7 +1016,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518856821}
-  m_LocalRotation: {x: -0, y: 0.0004999998, z: -0, w: 0.9999999}
+  m_LocalRotation: {x: -0, y: 0.00014342213, z: -0, w: 1}
   m_LocalPosition: {x: -606.1929, y: -24.895191, z: -807.0225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Path: {fileID: 8690948}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 10
+  m_Speed: 50
   m_Position: 0
 --- !u!1 &525387503
 GameObject:
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Path: {fileID: 119103747}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 10
+  m_Speed: 50
   m_Position: 0
 --- !u!4 &525387505
 Transform:
@@ -1082,7 +1082,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525387503}
-  m_LocalRotation: {x: -0, y: 0.0004999998, z: -0, w: 0.9999999}
+  m_LocalRotation: {x: -0, y: 0.0001398107, z: -0, w: 1}
   m_LocalPosition: {x: -606.1929, y: -24.895191, z: -807.0225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
