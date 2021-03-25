@@ -51,6 +51,8 @@ MonoBehaviour:
   xpValue: 5
   players: []
   lastHitPlayer: {fileID: 0}
+  gameManager: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 19a2013472f018c43aa865958be559ef, type: 3}
 --- !u!1 &5460708766886619072
 GameObject:
   m_ObjectHideFlags: 0

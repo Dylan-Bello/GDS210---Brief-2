@@ -36,6 +36,8 @@ namespace SAE
         public float fireRate = 0.5F;
         public float nextFire = 0.0F;
 
+        public AudioClip shootClip;
+
         [HideInInspector]
         public bool canShoot = true;
 
@@ -134,7 +136,7 @@ namespace SAE
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet.GetComponent<Bullet>().shooter = this.gameObject;
-            //SoundManager.instance.PlayShootFX(shootClip);
+            SoundManager.instance.PlayShootFX(shootClip);
 
         }
 

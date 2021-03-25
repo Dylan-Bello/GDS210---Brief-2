@@ -10190,6 +10190,7 @@ MonoBehaviour:
   crosshairTexture: {fileID: 0}
   fireRate: 0.3
   nextFire: 0
+  shootClip: {fileID: 8300000, guid: 5cc279c53b2de394aae11f74f7f8d9a0, type: 3}
   canShoot: 1
 --- !u!1 &8035012759433273994
 GameObject:

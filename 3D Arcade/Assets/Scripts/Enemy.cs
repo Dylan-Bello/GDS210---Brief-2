@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     public GameObject lastHitPlayer;
 
     public GameManager gameManager;
-    
+    public AudioClip deathClip;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour
                      Debug.Log("Invalid Gameobject");
                  }
              }*/
+            SoundManager.instance.PlaySoundFX(deathClip);
             gameManager.UpdateScore(5);
             Destroy(this.gameObject);
 
