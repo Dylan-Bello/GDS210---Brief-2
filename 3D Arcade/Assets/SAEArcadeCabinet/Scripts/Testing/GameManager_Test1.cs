@@ -76,6 +76,8 @@ namespace SAE
 
                 playerTransform.position = tmpPosition;
             }
+
+
         }
 
         private void OnDrawGizmos()

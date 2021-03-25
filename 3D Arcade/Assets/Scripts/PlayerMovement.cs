@@ -14,7 +14,9 @@ namespace SAE
         public int xp = 0;
         public int level = 1;
         public int xpForNextLevel = 10;
-        //private PlayerHealth health;
+        public HealthBar health;
+        private int maxHealth = 100;
+        public int currentHealth; 
 
         public bool Joystick = true;
 
@@ -43,7 +45,8 @@ namespace SAE
         void Start()
         {
             playerModel = gameObject.transform;
-            //health = this.GetComponent<PlayerHealth>();
+            health = this.GetComponent<HealthBar>();
+            currentHealth = maxHealth;
             SetXpForNextLevel();
 
             //SetSpeed(forwardSpeed);
@@ -65,15 +68,19 @@ namespace SAE
                 Shoot();
             }
 
-            if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.BLUE_PLAYER, 0) == true) && (Time.time > nextFire) && canShoot)
+            if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.BLUE_PLAYER, 1) == true) && (Time.time > nextFire) && canShoot)
             {
                 nextFire = Time.time + fireRate;
                 Shoot();
             }
 
+            if (currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
 
 
-            if (xp >= xpForNextLevel)
+                if (xp >= xpForNextLevel)
             {
                 LevelUp();
                 //health.RegenHealthFull();
@@ -135,6 +142,14 @@ namespace SAE
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet.GetComponent<Bullet>().shooter = this.gameObject;
             //SoundManager.instance.PlayShootFX(shootClip);
+
+        }
+
+        public void TakeDamage(int damageToTake)
+        {
+            currentHealth -= damageToTake;
+            //healthBar.SetHealth(currentHealth);
+
 
         }
 
