@@ -3636,4 +3636,3 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   lastHitPlayer: {fileID: 0}
-  gameManager: {fileID: 0}

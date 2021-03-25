@@ -6,25 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   /* public void Update()
-    {
-        if (Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 0) == true)
-        {
-            PlayGame();
-        }
-
-        if (Input.GetMouseButton(1) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 2) == true)
-        {
-            PlayCoopGame();
-        }
-
-        if (Input.GetMouseButton(2) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 1) == true)
-        {
-            QuitGame();
-        }
-
-    }*/
-    
     public void PlayGame()
     {
         Debug.Log("Play Game");

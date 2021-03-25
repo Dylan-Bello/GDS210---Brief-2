@@ -10112,7 +10112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 80406020856011521}
   offset: {x: 0, y: 1, z: 0}
-  limits: {x: 5, y: 5}
+  limits: {x: 10, y: 5}
   smoothTime: 0.5
 --- !u!114 &474867685875618235
 MonoBehaviour:
@@ -10156,11 +10156,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744915232490291643}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11084734, y: 0.03247955, z: 0.11025798}
-  m_Center: {x: 0.00037214757, y: 0.0029255152, z: -0.013056813}
+  m_Size: {x: 0.08003478, y: 0.03247955, z: 0.13384628}
+  m_Center: {x: -0.000980382, y: 0.0029255152, z: -0.001262741}
 --- !u!114 &8761036068519461219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10176,12 +10176,10 @@ MonoBehaviour:
   xp: 0
   level: 1
   xpForNextLevel: 10
-  health: {fileID: 382158474236618169, guid: af777c9e381b08544a83e049a11e07e9, type: 3}
-  currentHealth: 0
   Joystick: 1
-  moveSpeed: 25
-  lookSpeed: 12
-  forwardSpeed: 50
+  moveSpeed: 20
+  lookSpeed: 10
+  forwardSpeed: 6
   aimTarget: {fileID: 474867684444444832}
   mainCamera: {fileID: 474867685875618238}
   dolly: {fileID: 0}
@@ -10193,33 +10191,6 @@ MonoBehaviour:
   fireRate: 0.3
   nextFire: 0
   canShoot: 1
---- !u!114 &8989593513720826646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744915232490291643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f281ae06ed69444915ed833e0c417e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8761036068519461219}
-        m_TargetAssemblyTypeName: SAE.PlayerMovement, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8035012759433273994
 GameObject:
   m_ObjectHideFlags: 0
