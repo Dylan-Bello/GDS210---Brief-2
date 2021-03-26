@@ -15,8 +15,8 @@ namespace SAE
         // Properties
         public GameObject yellowPlayer;          // Reference to yellow players' Rigidbody component.
         public GameObject bluePlayer;            // Reference to blue players' Rigidbody component.
-        public Rigidbody redPlayer;             // Reference to red players' Rigidbody component.
-        public Rigidbody greenPlayer;           // Reference to green players' Rigidbody component.
+        //public Rigidbody redPlayer;             // Reference to red players' Rigidbody component.
+        //public Rigidbody greenPlayer;           // Reference to green players' Rigidbody component.
 
         public float moveSpeed = 5f;            // Velocity speed of moving players.
         public Vector2 wrapSize;                // When a players position goes outside these (width/height) values, teleport to other side.
@@ -61,7 +61,7 @@ namespace SAE
 
 
             // Check for offscreen loop.
-            Transform[] allPlayerTransforms = { this.yellowPlayer.transform, this.bluePlayer.transform, this.redPlayer.transform, this.greenPlayer.transform };
+            Transform[] allPlayerTransforms = { this.yellowPlayer.transform, this.bluePlayer.transform }; //this.redPlayer.transform, this.greenPlayer.transform };
             foreach( Transform playerTransform in allPlayerTransforms )
             {
                 Vector3 tmpPosition = playerTransform.position;

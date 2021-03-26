@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public float spinSpeed = 100f;
     public int xpValue = 1;
 
-    public GameObject[] players;
+    public GameObject[] player;
     public GameObject lastHitPlayer;
 
     public GameManager gameManager;
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
       //  player = GameObject.FindGameObjectWithTag("Player");//GetComponent<SAE.PlayerMovement>();
-        players = GameObject.FindGameObjectsWithTag("Player");
+        player = GameObject.FindGameObjectsWithTag("Player");
     }
 
     void Update()
@@ -56,9 +56,15 @@ public class Enemy : MonoBehaviour
                  }
              }*/
             SoundManager.instance.PlaySoundFX(deathClip);
-            gameManager.UpdateScore(5);
             Destroy(this.gameObject);
 
+            gameManager.UpdateScore(5);
+
+        }
+
+        else
+        {
+            Destroy(this.gameObject, 6f);
         }
     }
 
@@ -76,5 +82,5 @@ public class Enemy : MonoBehaviour
 
         
     }
-
+    
 }

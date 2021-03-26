@@ -3254,6 +3254,7 @@ GameObject:
   - component: {fileID: 4814073931055265556}
   - component: {fileID: 4214409702399918188}
   - component: {fileID: 8328154075083719926}
+  - component: {fileID: 7473006682020251456}
   m_Layer: 0
   m_Name: Lowpoly-Donut-Pink
   m_TagString: Untagged
@@ -3410,7 +3411,7 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 378007865115319515}
+      - m_Target: {fileID: 7473006682020251456}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 3
@@ -3422,6 +3423,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7473006682020251456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4814073931055265554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b991ec29e4fd7dd41b8408b83e9f0925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  moveSpeed: 10
+  spinSpeed: 100
+  xpValue: 1
+  player:
+  - {fileID: 6514068130237615154, guid: 029bab19514b1ed45b44f7209dc9751f, type: 3}
+  - {fileID: 2588137254454448027, guid: 10417388345cdd947a6ca13a371571e5, type: 3}
+  lastHitPlayer: {fileID: 0}
+  gameManager: {fileID: 0}
+  deathClip: {fileID: 0}
 --- !u!1 &4814073931098905114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,14 +3632,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330996332906133743}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.97629607, z: -0.2164396, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4814073931055265544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: 180, z: 0}
 --- !u!114 &378007865115319515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3623,7 +3647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330996332906133743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b991ec29e4fd7dd41b8408b83e9f0925, type: 3}
   m_Name: 
@@ -3633,9 +3657,9 @@ MonoBehaviour:
   moveSpeed: 20
   spinSpeed: 0
   xpValue: 1
-  players:
-  - {fileID: 6514068130237615154, guid: 029bab19514b1ed45b44f7209dc9751f, type: 3}
-  - {fileID: 2588137254454448027, guid: 10417388345cdd947a6ca13a371571e5, type: 3}
+  player:
+  - {fileID: 0}
   lastHitPlayer: {fileID: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 7937686001936891324, guid: ef98743e3cf4d8648805eb29b5bb9b0d,
+    type: 3}
   deathClip: {fileID: 8300000, guid: 19a2013472f018c43aa865958be559ef, type: 3}
