@@ -14,7 +14,7 @@ namespace SAE
         public int xp = 0;
         public int level = 1;
         public int xpForNextLevel = 10;
-        //private PlayerHealth health;
+        //public PlayerHealth health;
 
         public bool Joystick = true;
 
@@ -47,7 +47,7 @@ namespace SAE
             playerModel = gameObject.transform;
             //health = this.GetComponent<PlayerHealth>();
             SetXpForNextLevel();
-
+            
             //SetSpeed(forwardSpeed);
             flame.Play();
         }
@@ -64,13 +64,13 @@ namespace SAE
             if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 0) == true ) && (Time.time > nextFire) && canShoot)
             {
                 nextFire = Time.time + fireRate;
-                Shoot();
+                this.Shoot();
             }
 
-            if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.BLUE_PLAYER, 0) == true) && (Time.time > nextFire) && canShoot)
+            else if ((Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.BLUE_PLAYER, 0) == true) && (Time.time > nextFire) && canShoot)
             {
                 nextFire = Time.time + fireRate;
-                Shoot();
+                this.Shoot();
             }
 
 

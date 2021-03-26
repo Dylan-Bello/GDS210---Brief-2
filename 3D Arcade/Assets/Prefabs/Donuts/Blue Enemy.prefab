@@ -3634,7 +3634,8 @@ MonoBehaviour:
   spinSpeed: 0
   xpValue: 5
   players:
-  - {fileID: 0}
+  - {fileID: 6514068130237615154, guid: 029bab19514b1ed45b44f7209dc9751f, type: 3}
+  - {fileID: 2588137254454448027, guid: 10417388345cdd947a6ca13a371571e5, type: 3}
   lastHitPlayer: {fileID: 0}
   gameManager: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 19a2013472f018c43aa865958be559ef, type: 3}
