@@ -8,12 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public void Update()
     {
-        if (Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 4) == true)
+        if (Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 3) == true)
         {
             PlayGame();
         }
 
-        if (Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 3) == true)
+        if (Input.GetMouseButton(0) || SAE.ArcadeMachine.PlayerPressingButtonStatic(SAE.ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 4) == true)
         {
             PlayCoopGame();
         }
