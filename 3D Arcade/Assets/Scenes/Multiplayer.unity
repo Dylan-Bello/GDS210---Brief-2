@@ -504,7 +504,7 @@ MonoBehaviour:
       m_Calls: []
   useEvents: 1
   resetPlayersKey: 292
-  dontConfigureInEditor: 0
+  dontConfigureInEditor: 1
   NumberOfPlayers: 2
 --- !u!4 &2028292639
 Transform:
